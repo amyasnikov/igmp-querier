@@ -4,7 +4,7 @@ __author__ = 'anton'
 from scapy.layers.inet import *
 from scapy.all import *
 from scapy.contrib.igmp import *
-import time, threading, commands
+import time, threading, commands, sys
 
 
 
@@ -126,7 +126,7 @@ class Querier:
 
 if __name__ == "__main__":
 
-    q = Querier(iface='eth0')
+    q = Querier(iface=sys.argv[1])
     while True:
         time.sleep(0.5)
 
